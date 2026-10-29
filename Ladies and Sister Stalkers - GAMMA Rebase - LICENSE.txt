@@ -1,0 +1,19 @@
+Ladies and Sister Stalkers - GAMMA Rebase
+Copyright (c) 2026 Q4ln
+
+The original code and assets of this mod are by Q4ln and are licensed under
+the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+licence (CC BY-NC-SA 4.0):
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+Third-party mods that this mod integrates with, and any third-party assets it
+uses or ships, are not covered by this licence and remain under their own
+authors' terms.
+
+This covers the Rebase's own code, configuration and build (the adapter scripts,
+the Female pack, the voice manifest, the package marker and the build tooling's
+output). The female bodies, hands, voices, sounds, textures, portraits and other
+assets made by the Ladies and Sister Stalkers 2.1 team (Paint_Thinner,
+KILIMANAJARO, Alex_Marheaves, Blackbomb, MiK_, Isthar) remain under the LASS
+team's terms, and the other third-party assets listed in the README's Credits
+remain under their authors' terms.
