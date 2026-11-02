@@ -9,7 +9,9 @@ silhouette, video portraits and female-addressed dialogue. Male characters
 stay as in GAMMA, and so do NPCs and mutants apart from their step sounds and
 31 NPC suit textures.
 
-It requires GAMMA Character Selector; without the Selector it does nothing.
+It requires GAMMA Character Selector d2026.11.1.2 or newer; d2026.11.2.1 or
+newer is recommended. Without the Selector, Female is not offered, but the
+step sound bank and the 31 NPC suit textures still change every character.
 
 ## Download
 
@@ -26,7 +28,7 @@ and the full credits are in
 which also ships inside the archive.
 
 This repository holds only the README and the licence. The mod's files (about
-3.6 GB of models, textures, sounds and videos, a 1.5 GB download) are in the
+3.7 GB of models, textures, sounds and videos, a 1.5 GB download) are in the
 release archive.
 
 ## Credits and licence

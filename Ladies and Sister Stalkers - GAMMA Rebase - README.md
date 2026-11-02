@@ -1,6 +1,6 @@
 # Ladies and Sister Stalkers - GAMMA Rebase
 
-Version `d2026.10.28.1`
+Version `d2026.11.2.1`
 
 The Ladies and Sister Stalkers (LASS 2.1) female player character for GAMMA, as a
 Female pack for GAMMA Character Selector. Choose Female on the New Game screen to
@@ -58,10 +58,14 @@ no other GAMMA or Anomaly file.
 ## Requirements
 
 - S.T.A.L.K.E.R. Anomaly 1.5.3.
-- GAMMA, modpack definition 920 (built and checked against it; played only
-  briefly in game, see Known issues).
-- **GAMMA Character Selector d2026.10.26.1 or newer.** This build has no standalone
-  mode: without the Selector it does nothing.
+- GAMMA, modpack definition 920 (built and checked against it; only briefly
+  tested in game, see Known issues).
+- **GAMMA Character Selector d2026.11.1.2 or newer.** This build has no standalone
+  mode: without the Selector, Female is not offered, and the only change left is
+  the step sound bank and the 31 NPC suit textures that this build overwrites
+  for every character (see What it does). GAMMA Character Selector d2026.11.2.1
+  or newer is recommended for the pack's extra rows (see Compatibility and
+  conflicts).
 - The Modded Exes build that GAMMA installs. The portraits are Ogg Theora
   videos, which the game engine plays as textures; they were seen playing on
   Modded Exes MT-TEST 2026.05.15 with DX11. There is no fallback to the frame
@@ -80,18 +84,22 @@ no other GAMMA or Anomaly file.
      earlier). Older builds overwrite GAMMA's files and are sometimes installed
      under the folder name `Ladies and Sister Stalkers` too.
 
-   Also remove the separate `LASS - Female Body Health Icon` mod; its atlas is
-   part of this build. Remove the add-on
+   Also remove the separate `LASS - Female Body Health Icon` mod, and the old
+   Rebase's optional headgear sounds if you installed its `optional\headgear_hud`
+   folder as a mod of its own: they replace GAMMA's own health-HUD atlas and
+   headgear sounds, so they change Male characters too, and this build has both
+   for Female. Remove the add-on
    `Ladies and Sister Stalkers - GAMMA Rebase - Headgear HUD Sounds` and the mod
    `LASS - OGM Animated Portraits` too, if you have them: their files are part
    of this build, and an old copy only duplicates them. The Selector recognises
    the files of the original mod and of the old Rebase. While any of them is
    installed, the New Game screen shows "Incompatible character files are
-   installed", followed by "The old overwriting LASS GAMMA Rebase or original
-   LASS files are installed..." and the name of the file it found. Every
-   gender, Male included, is then Unavailable, and saves made with the Selector
-   are refused with "This character cannot be loaded".
-3. Install GAMMA Character Selector d2026.10.26.1 or newer.
+   installed", followed by a line saying that files of a mod that overwrites
+   GAMMA's own player files are installed (older Selectors name the old Rebase
+   and the original LASS files instead), and the name of the file it found.
+   Every gender, Male included, is then Unavailable, and saves made with the
+   Selector are refused with "This character cannot be loaded".
+3. Install GAMMA Character Selector d2026.11.1.2 or newer.
 4. Install this archive with MO2 and enable it.
 5. MO2 priority: give it higher priority than every GAMMA mod, that is, place
    it lower in MO2's left pane than all of them (the end of the list is fine).
@@ -115,6 +123,13 @@ no other GAMMA or Anomaly file.
 - Built for GAMMA Character Selector's external-pack interface: package `lass`,
   marker `configs\lass_gcs_female_pack_v1.ltx`, pack
   `configs\plugins\gcs\packs\50_lass_female.ltx`.
+- GAMMA Character Selector d2026.11.2.1 or newer also applies the pack's extra
+  rows (weapon and bolt sections that inherit Female's corrections, such as the
+  KSG-23 scopes and the TOZ-34 variants, and one more HUD section's hands) and
+  compares each row, except the player's own body, legs and default hands,
+  with the running GAMMA: an offset made for a different GAMMA value follows
+  GAMMA's new value with Female's correction added, and any other such row is
+  kept and noted in the log. Older Selectors apply the main rows only.
 - Works with GAMMA's own scripts. VAREFINED, AGDD, FDDA, the Body Health System
   and GAMMA's footstep and jump scripts stay authoritative; the Rebase adapts to
   them instead of replacing them.
@@ -145,7 +160,7 @@ as in GAMMA.
 - Adding: start a new game and choose Female.
 - Saves made with the old Rebase and Selector rc15: Female saves keep their
   Female character and load once this build and GAMMA Character Selector
-  d2026.10.26.1 or newer are installed.
+  d2026.11.1.2 or newer are installed.
   Male saves load too; the Selector drops their old requirement on the LASS
   package, so they no longer need any LASS mod.
 - Saves made before GAMMA Character Selector was installed, for example with
@@ -167,11 +182,23 @@ cannot be loaded until the mod is installed again. No settings are left behind.
 
 ## Known issues
 
-- In game this build has only been played briefly: one new Female game with
-  the Character Selector, including loading one of its saves. Male games with
-  this mod installed, saves from the old Rebase and long play have
-  not been tested in game yet. Report crashes with the newest `xray_*.log`
-  from Anomaly's `appdata\logs` folder.
+- This build was only briefly tested in game, together with the GAMMA Character
+  Selector build that first applies the pack's extra rows (see Compatibility
+  and conflicts). With that Selector build, two new Female games reached the
+  starting level and ran for about 12 seconds each, with no error from this
+  mod. The other checks used earlier copies of it. At the main menu, Female was
+  listed and valid, all 768 of its body rows applied and read back as written,
+  the extra rows took their female values, and switching to Male returned every
+  row it had changed to GAMMA's value. Loaded through the console
+  (`start server`, which skips the Load menu's checks), a Female save made with
+  the build before this one came up as Female with Female's voice profile, and
+  the weapon-inspection voice line resolved to this build's female recordings
+  through Voiced Actor Refined, with no error from this mod. The build before
+  this one was itself played briefly: one new Female game with the Character
+  Selector, and one of its saves loaded through the console. Male games with
+  this mod installed, games with an older GAMMA Character Selector, saves from
+  the old Rebase and longer play have not been tested in game yet. Report
+  crashes with the newest `xray_*.log` from Anomaly's `appdata\logs` folder.
 - The portrait videos were seen playing in game, but their colours with the
   empty video-shader files have not been checked yet.
 - One Russian line, Voronin's briefing `voronin_living_legend_3`, is not the
@@ -193,11 +220,43 @@ cannot be loaded until the mod is installed again. No settings are left behind.
   The old Rebase supplied six of them for every character; this build carries
   those six under `lass\female` and no longer applies them, so with that option
   those legs look as in GAMMA without this mod, for every gender.
+- For Female, the bullet bolt does not get the LASS bolt's HUD field of view,
+  its draw, holster, throw-start, inspect and scripted shot sounds or its
+  crouch-walk animation, and stays as in GAMMA there: GAMMA gives no bolt
+  these settings, and the Selector can add them to the normal bolt only.
 - The NPC and creature step sound bank and the 31 NPC suit textures still
   change every character, Male included. GAMMA's material pairs also play those
   step sounds for some mutant steps and object impacts.
 
 ## Changelog
+
+### d2026.11.2.1
+
+- Needs GAMMA Character Selector d2026.11.1.2 or newer: the pack's main rows
+  are held to the list of keys that build lets a pack write. Selectors before
+  d2026.11.1.1 also hid Female when the running GAMMA lacked one row or file
+  the pack names. GAMMA Character Selector d2026.11.2.1 or newer is
+  recommended; it applies the next two changes.
+- With GAMMA Character Selector d2026.11.2.1 or newer, Female now also reaches
+  the weapon and bolt sections that inherit her corrections: the item position
+  of all 36 KSG-23 scope HUD sections, the aim offsets and item position of the
+  TOZ-34 scope and sawn-off variants, and the bullet bolt's hand and item
+  positions, throw sound and all of its animations except crouch-walking. The
+  hands of one more HUD section (`actor_hud_merc_proto`) get their female copy.
+  Older Selectors apply the main rows only, as before.
+- Every row except the player's own body, legs and default hands now states
+  the GAMMA value it was made for. GAMMA Character Selector d2026.11.2.1 or
+  newer compares it with the running GAMMA: weapon and bolt offsets made for a
+  different value follow GAMMA's new value with Female's correction added (the
+  TOZ-34's own position, GAMMA's value today, follows it as its variants do);
+  any other row made for a different value is kept and noted in the log.
+- The pack no longer writes the 14 player voice rows (hit sounds and the
+  heavy-state breath, blood and danger sounds) and the two bolt rows that were
+  GAMMA's own values; GAMMA's values apply, as they already did.
+- README: without the Selector, Female is not offered, but the step sound bank
+  and the 31 NPC suit textures still change every character; the separate
+  health-icon mod and the old Rebase's optional headgear folder must be removed
+  because they change Male characters too.
 
 ### d2026.10.28.1
 
